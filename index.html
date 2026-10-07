@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shafiiq SMK – Stock Market Kerala</title>
+<meta name="description" content="Free stock market learning in Malayalam and English for Kerala: market basics, chart reading and daily market news explained.">
+<meta name="theme-color" content="#0b2a1a">
+<script>
+  var TELEGRAM_LINK    = "https://t.me/+lPxtS5-3C9kzZWQ9";
+  var REVISIT_REDIRECT = true;  // true = pehle join kar chuke log seedha Telegram jaayein, false = sabko page dikhe
+
+  // Revisit check: pehle button daba chuka hai to page chhupa do (PageView ke baad Telegram)
+  var TEST_MODE = /[?&]test=1/.test(location.search);  // testing: link ke end me ?test=1
+  var IS_REVISIT=false;
+  (function(){
+    if(!REVISIT_REDIRECT) return;
+    if(TEST_MODE || location.search.indexOf("stay=1")>-1) return;   // test/stay mode me page hamesha dikhe
+    try{ IS_REVISIT = localStorage.getItem("smk_sub")==="1"; }catch(e){}
+    if(!IS_REVISIT) IS_REVISIT = /(?:^|; )smk_sub=1/.test(document.cookie);
+    if(IS_REVISIT){
+      var st=document.createElement("style");
+      st.textContent="html{background:#0b2a1a}body{visibility:hidden}";
+      document.head.appendChild(st);
+    }
+  })();
+</script>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  // Meta ke automatic events band (SubscribedButtonClick, Microdata) - Subscribe sirf hamare code se
+  fbq('set', 'autoConfig', false, '1801315857677401');
+  fbq('init', '1801315857677401');
+  fbq('track', 'PageView');
+
+  // Revisit: Pixel load hokar PageView bhej de, phir Telegram (max 1.5 sec wait)
+  if(IS_REVISIT){
+    var go=false, startT=Date.now();
+    function goTG(){ if(go) return; go=true; location.replace(TELEGRAM_LINK); }
+    (function wait(){
+      if(window.fbq && window.fbq.callMethod) return setTimeout(goTG,300);
+      if(Date.now()-startT>1500) return goTG();
+      setTimeout(wait,50);
+    })();
+  }
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1801315857677401&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+  :root{--y:#c9a227;--r:#15803d;--r2:#166534;--ink:#1d1a12;--muted:#6b6450;--line:#eadfbf}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans Malayalam","Malayalam Sangam MN",Arial,sans-serif;
+    color:var(--ink);min-height:100vh;min-height:100dvh;
+    display:flex;align-items:center;justify-content:center;padding:16px;
+    background:
+      radial-gradient(circle at 50% 0%,rgba(201,162,39,.25),transparent 50%),
+      radial-gradient(circle at 0% 100%,rgba(34,197,94,.22),transparent 50%),
+      #0b2a1a;
+    -webkit-font-smoothing:antialiased;
+  }
+  .card{
+    width:100%;max-width:400px;background:#fffbef;border-radius:22px;border:3px solid #c9a227;
+    padding:0 18px 18px;text-align:center;position:relative;overflow:hidden;
+    box-shadow:0 22px 50px rgba(0,0,0,.5);
+  }
+  .band{display:block;height:10px;margin:0 -18px 20px;background:linear-gradient(#c9a227 0 3px,#fffbef 3px 5px,#c9a227 5px 8px,transparent 8px)}
+  .band i{flex:1}.band i:first-child{background:var(--y)}.band i:last-child{background:var(--r)}
+  .logo{width:96px;height:96px;margin:0 auto 12px;border-radius:50%;box-shadow:0 0 0 4px #fffbef,0 0 0 6px #c9a227,0 10px 22px rgba(21,128,61,.3)}
+  .logo{overflow:hidden}
+  .logo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;background:#0f1235}
+  .namaskara{display:inline-block;font-size:13px;font-weight:700;color:#7a5a00;background:#f6ebc6;border-radius:99px;padding:4px 12px;margin-bottom:8px}
+  h1{font-size:25px;font-weight:900;letter-spacing:-.3px;line-height:1.15}
+  h1 span{color:var(--r)}
+  .kn{font-size:16.5px;font-weight:800;color:var(--r2);margin-top:6px;line-height:1.5}
+  .sub{color:var(--muted);font-size:14px;margin-top:2px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
+  .item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 8px;text-align:left;display:flex;gap:8px;align-items:center}
+  .item .ic{width:30px;height:30px;flex:0 0 30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .y{background:#fff4dc}.rd{background:#d9f5f1}
+  .item b{display:block;font-size:12.5px;line-height:1.2}
+  .item small{display:block;font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:1px}
+  .list{list-style:none;margin:16px 0;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 12px}
+  .list li{display:flex;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #f1e8cc}
+  .list li:last-child{border-bottom:0}
+  .list .n{width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:#e7f5ec;color:#15803d;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .list b{display:block;font-size:13.5px;line-height:1.25}
+  .list small{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+  .cta{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;padding:15px 12px;border-radius:99px;
+    font-size:clamp(13px,4vw,16px);font-weight:900;color:#fff;text-decoration:none;white-space:nowrap;
+    background:linear-gradient(135deg,#22a454,var(--r) 50%,var(--r2));
+    box-shadow:0 10px 24px rgba(21,128,61,.35),inset 0 -3px 0 rgba(0,0,0,.15);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .cta svg{width:22px;height:22px;flex:0 0 22px}
+  .cta.wait{opacity:.7;pointer-events:none}
+  .cta.ready{animation:g 1.6s infinite}
+  @keyframes g{50%{transform:scale(1.025);box-shadow:0 10px 32px rgba(21,128,61,.55),inset 0 -3px 0 rgba(0,0,0,.15)}}
+  .free{margin-top:10px;font-size:12.5px;color:var(--muted)}
+  .free b{color:#15803d}
+  hr{border:0;border-top:1px solid var(--line);margin:14px 0 10px}
+  .disc{font-size:11.5px;color:#7a8794;line-height:1.55}
+  .disc b{color:#475569}
+  .links{margin-top:8px;font-size:12px}
+  .links a{color:#7a8794;text-decoration:none}
+
+  .modal{position:fixed;inset:0;background:rgba(11,42,26,.75);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50;animation:fi .2s ease-out}
+  .modal[hidden]{display:none}
+  @keyframes fi{from{opacity:0}to{opacity:1}}
+  .mbox{position:relative;background:#fffbef;width:100%;max-width:400px;max-height:80vh;overflow-y:auto;border-radius:18px;padding:22px 18px 18px;text-align:left;box-shadow:0 20px 50px rgba(0,0,0,.4);animation:up .25s ease-out}
+  @keyframes up{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+  .mbox h2{font-size:19px;color:var(--r2);margin-bottom:2px}
+  .mbox small{color:#7a8794;font-size:11.5px}
+  .mbox h3{font-size:14px;margin:14px 0 3px}
+  .mbox p{font-size:13px;color:#475569;line-height:1.55}
+  .mbox a{color:var(--r)}
+  .mclose{position:absolute;top:10px;right:10px;width:32px;height:32px;border:0;border-radius:50%;background:#eaf0f5;color:#475569;font-size:15px;cursor:pointer}
+  @media (max-width:350px){h1{font-size:22px}.list small{display:none}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="band"><i></i><i></i></div>
+
+  <div class="logo">
+    <img src="data:image/webp;base64,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" width="96" height="96" alt="Shafiiq SMK – Stock Market Kerala">
+  </div>
+
+  <div class="namaskara">🙏 നമസ്കാരം · Namaskaram</div>
+  <h1>Shafiiq <span>SMK</span></h1>
+  <p class="kn">ഓഹരി വിപണി ലളിതമായി പഠിക്കാം</p>
+  <p class="sub">Stock Market Kerala · Malayalam &amp; English</p>
+
+  <ul class="list">
+    <li><span class="n">✓</span><span><b>Market Basics</b><small>അടിസ്ഥാന പാഠങ്ങൾ</small></span></li>
+    <li><span class="n">✓</span><span><b>Chart Reading</b><small>ചാർട്ട് വായന</small></span></li>
+    <li><span class="n">✓</span><span><b>Daily Market News</b><small>ദിവസേനയുള്ള വാർത്തകൾ</small></span></li>
+    <li><span class="n">✓</span><span><b>Malayalam Explained</b><small>മലയാളത്തിൽ വിശദീകരണം</small></span></li>
+  </ul>
+
+  <a id="cta" class="cta wait" href="https://t.me/+lPxtS5-3C9kzZWQ9" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.5 11.8l11.6-4.5c.5-.2 1 .1.8.9l-2 9.3c-.1.6-.5.8-1 .5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5.1c.2-.2 0-.3-.4-.1l-6.9 4.4-3-.9c-.6-.2-.6-.6.1-.9z" fill="#166534"/></svg>
+    JOIN FREE TELEGRAM CHANNEL
+  </a>
+  <p class="free">🔒 <b>100% Free</b> · സൗജന്യമായി ചേരൂ</p>
+
+  <hr>
+  <p class="disc"><b>Disclaimer:</b> This channel shares stock market education only. We do not give buy/sell recommendations, tips or signals and are not SEBI registered. Investing involves risk; please do your own research.</p>
+  <p class="links"><a href="#" id="openPrivacy">Privacy Policy</a> · <a href="mailto:shafiiqsmk.help@gmail.com">Contact</a></p>
+</main>
+
+<div class="modal" id="privacy" role="dialog" aria-modal="true" aria-labelledby="ppTitle" hidden>
+  <div class="mbox">
+    <button class="mclose" id="closePrivacy" aria-label="Close">✕</button>
+    <h2 id="ppTitle">Privacy Policy</h2>
+    <small>Last updated: October 2026</small>
+    <h3>Who we are</h3>
+    <p>Shafiiq SMK (Stock Market Kerala) runs a Telegram channel that shares stock market education in Malayalam and English.</p>
+    <h3>What we collect</h3>
+    <p>We do not ask for your name, phone number or email on this website. We use the Meta Pixel, which may collect technical information such as browser type, device, IP address and pages visited, to measure our ads.</p>
+    <h3>Cookies &amp; storage</h3>
+    <p>This website and the Meta Pixel use cookies and browser storage to measure visits and avoid counting the same visitor twice. You can clear or block cookies in your browser settings.</p>
+    <h3>Third parties</h3>
+    <p><b>Meta Platforms</b> for ad measurement (<a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Privacy Policy</a>). When you join our channel, <b>Telegram's</b> privacy policy applies.</p>
+    <h3>Not financial advice</h3>
+    <p>All content is for educational purposes only. We do not give buy/sell recommendations, tips or signals.</p>
+    <h3>Contact</h3>
+    <p><a href="mailto:shafiiqsmk.help@gmail.com">shafiiqsmk.help@gmail.com</a></p>
+  </div>
+</div>
+
+<script>
+  var CLICK_DELAY = 0.3; // button turant dikhta hai, click itne second baad hoga
+
+  var cta=document.getElementById("cta");
+  cta.href=TELEGRAM_LINK;
+  setTimeout(function(){cta.classList.remove("wait");cta.classList.add("ready");},CLICK_DELAY*1000);
+
+  // ---- Duplicate rokne ke liye: localStorage + cookie ----
+  function getCookie(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):null;}
+  function alreadySubscribed(){
+    var ls=null; try{ ls=localStorage.getItem("smk_sub"); }catch(e){}
+    return ls==="1" || getCookie("smk_sub")==="1";
+  }
+  function markSubscribed(){
+    try{ localStorage.setItem("smk_sub","1"); }catch(e){}
+    document.cookie="smk_sub=1; max-age="+(60*60*24*90)+"; path=/; SameSite=Lax"; // 90 din
+  }
+
+  // ---- Asli user check ----
+  var touched=false, fired=false, loadedAt=Date.now();
+  ["pointerdown","touchstart","mousedown"].forEach(function(ev){
+    cta.addEventListener(ev,function(e){ if(e.isTrusted) touched=true; },{passive:true});
+  });
+
+  // ---- Telegram app seedha kholne ki koshish (tg://), na khule to t.me ----
+  function tgDeepLink(u){
+    var m=u.match(/t\.me\/(?:joinchat\/|\+)([\w-]+)/); if(m) return "tg://join?invite="+m[1];
+    m=u.match(/t\.me\/([A-Za-z0-9_]{4,})/); if(m) return "tg://resolve?domain="+m[1];
+    return null;
+  }
+  var fbTimer=null;
+  function openTelegram(){
+    var deep=tgDeepLink(TELEGRAM_LINK);
+    if(!deep){ window.location.href=TELEGRAM_LINK; return; }
+    var left=false;
+    function onHide(){ if(document.hidden){ left=true; clearTimeout(fbTimer); } }
+    document.addEventListener("visibilitychange",onHide);
+    window.location.href=deep;                                   // Telegram app khulega (agar installed hai)
+    fbTimer=setTimeout(function(){                               // app nahi khula to web link
+      document.removeEventListener("visibilitychange",onHide);
+      if(!left && !document.hidden) window.location.href=TELEGRAM_LINK;
+    },1200);
+  }
+
+  cta.addEventListener("click",function(e){
+    e.preventDefault();
+    if(fired) return;
+    var realUser = e.isTrusted && touched && (Date.now()-loadedAt) >= CLICK_DELAY*1000 && !navigator.webdriver;
+    fired=true;
+    if(TEST_MODE) testMsg(realUser ? "✅ Subscribe event bheja gaya" : "🤖 Bot/fake click – event nahi gaya");
+    if(realUser && (TEST_MODE || !alreadySubscribed())){
+      var eventId = "sub_" + Date.now() + "_" + Math.random().toString(36).slice(2,10);
+      if(window.fbq) fbq('track','Subscribe',{},{eventID:eventId});   // sirf pehli baar
+      if(!TEST_MODE) markSubscribed();   // test mode me yaad nahi rakhta, baar-baar test kar sako
+    }
+    setTimeout(openTelegram, TEST_MODE ? 1500 : 300);
+  });
+
+  // Back button se wapas aaye to button phir kaam kare
+  window.addEventListener("pageshow",function(e){ if(e.persisted){ fired=false; clearTimeout(fbTimer); } });
+
+  // ---- Test mode badge ----
+  function testMsg(t){ var b=document.getElementById("tbadge"); if(b) b.textContent="TEST MODE · "+t; }
+  if(TEST_MODE){
+    var tb=document.createElement("div"); tb.id="tbadge";
+    tb.style.cssText="position:fixed;top:0;left:0;right:0;z-index:99;background:#ffcc00;color:#111;font:700 12.5px system-ui,sans-serif;text-align:center;padding:8px";
+    document.body.appendChild(tb);
+    testMsg("PageView bheja gaya · ab button dabao");
+  }
+
+  // Privacy popup
+  var pp=document.getElementById("privacy");
+  function openPP(e){ if(e) e.preventDefault(); pp.hidden=false; document.body.style.overflow="hidden"; }
+  function closePP(){ pp.hidden=true; document.body.style.overflow=""; }
+  document.getElementById("openPrivacy").addEventListener("click",openPP);
+  document.getElementById("closePrivacy").addEventListener("click",closePP);
+  pp.addEventListener("click",function(e){ if(e.target===pp) closePP(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !pp.hidden) closePP(); });
+</script>
+</body>
+</html>
